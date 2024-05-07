@@ -14,8 +14,7 @@ module.exports = {
   // Get a single thought
   async getSingleThought(req, res) {
     try {
-      const thought = await Thought.findOne({ _id: req.params.thoughtId })
-        .populate(thought);
+      const thought = await Thought.findById(req.params.thoughtId).select('-__v');
 
       if (!thought) {
         return res.status(404).json({ message: 'No thought with that ID' });
