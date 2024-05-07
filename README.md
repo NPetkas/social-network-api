@@ -2,10 +2,10 @@
 
 ## Description
 
-  Note Taker was built to create a standard 'notes' or 'task' list' that can be used anytime 
-  anywhere by almost anyone. For reference, this build demonstrates how to setup routes, the use of 
-  'helpers' functions, and the structure of middleware.
-
+  Social Network Api was built to simulate how a real world back-end social network database will act with 
+  functionalities such as adding friends, thought creation/deletion, and reaction creation/deletion. For reference, this build 
+  demonstrates how to setup model requirements with a numerical count, setting up MongoDB with Mongoose, standard controllers, creation of multiple routes, and the 
+  use of 3rd party application `Insomnia` to test route requests.
 
 ## Table of Contents
 
@@ -19,33 +19,30 @@
 
 ## Installation
 
-1. Clone the repository `git clone git@github.com:NPetkas/express-note-taker.git`
+1. Clone the repository `git clone git@github.com:NPetkas/social-network-api.git`
 2. Navigate to the project directory in terminal
 3. Install dependencies `npm i`
 4. Run `npm run dev` to start server.
-5. Open web browser, then navigate to `http://localhost:3001` to run app.
 
 
 ## Usage
 
-1. Open app in web browser.
-2. Click `Get Started` button that navigates to the notes page.
-3. Create a note by clicking on the `pencil icon/note button`.
-4. Enter title and text for the note, then click `save note` button.
-5. Note is then displayed in the `notes list`.
-6. Click any note in the list to view an existing note.
-7. Click the `trash icon` to delete a note.
+1. Open `Insomnia` application.
+2. Select `social-network-api` request collection.
+3. Choose from `User`, `Thoughts`, `Reaction`, or `Friends` request sections.
+4. Run the following request options: `Get All`, `Get One`, `Create`, `Update`, `Delete`.
+5. Click `Send` after request option is chosen.
+6. Continue with each action as desired.
+7. When finished, navigate to terminal, and exit server by typing `control(^) + 'c'`.
 
 
 ## Technologies
 
-- HTML
-- CSS
 - JavaScript
 - Node.js
 - Express.js
-- UUID
-- Heroku
+- MongoDB with Mongoose
+
 
 
 ## Contributing
@@ -59,11 +56,11 @@ To contribute:
 
 ## Demo
 
-![image](Assets/note-taker-demo.gif)
+
 
 [Social Network Api Demo][def]
 
-[def]: https://drive.google.com/file/d/1A2I6YKDeMp3DWgkEHOoyjRdarxlcfLiw/view
+[def]: https://drive.google.com/file/d/1xhY3TfMDLwtM30kItiw10w-RHgf_keSE/view?usp=sharing
 
 
 
@@ -74,6 +71,6 @@ Contact information for any questions:
 
 Github Profile: [https://github.com/NPetkas](https://github.com/NPetkas)
 
-Link to Repo: [https://github.com/NPetkas/express-note-taker](https://github.com/NPetkas/express-note-taker)
+Link to Repo: [https://github.com/NPetkas/social-network-api](https://github.com/NPetkas/social-network-api)
 
 Email: [nicopetkas@gmail.com](nicopetkas@gmail.com)
