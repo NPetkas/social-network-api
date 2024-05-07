@@ -51,7 +51,7 @@ module.exports = {
  // Delete a user by ID
   async deleteUser(req, res) {
     try {
-      const deleteUser = await Student.findOneAndRemove({ _id: req.params.userId });
+      const deleteUser = await User.findOneAndRemove({ _id: req.params.userId });
 
       if (!deleteUser) {
         return res.status(404).json({ message: 'No such user exists' });
@@ -68,24 +68,24 @@ module.exports = {
   },
 
   // Add a friend to a user
-  async addAssignment(req, res) {
+  async addFriend(req, res) {
     console.log('You are adding a friend');
     console.log(req.body);
 
     try {
-      const user = await User.findOneAndUpdate(
+      const userFriend = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $addToSet: { friends: req.body.friendId || req.params.friendId } },
+        { $addToSet: { friends: req.body.friendsId || req.params.friendsId } },
         { runValidators: true, new: true }
       );
 
-      if (!user) {
+      if (!userFriend) {
         return res
           .status(404)
           .json({ message: 'No user found with that ID :(' });
       }
 
-      res.json(user);
+      res.json(userFriend);
     } catch (err) {
       res.status(500).json(err);
     }
@@ -95,7 +95,7 @@ module.exports = {
     try {
       const user = await User.findOneAndUpdate(
         { _id: req.params.userId },
-        { $pull: { friends: req.params.friendId } },
+        { $pull: { friends: req.params.friendsId } },
         { runValidators: true, new: true }
       );
 
@@ -105,7 +105,7 @@ module.exports = {
           .json({ message: 'No user found with that ID :(' });
       }
 
-      const removeFriend = !user.friends.includes(req.params.friendId);
+      const removeFriend = !user.friends.includes(req.params.friendsId);
       res.status(200).json({ message: 'Friend removed from friend list', user });
 
       res.json(removeFriend);
